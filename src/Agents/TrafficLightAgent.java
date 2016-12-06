@@ -3,29 +3,21 @@ package Agents;
 import jade.core.Agent;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
-import trasmapi.sumo.SumoCom;
-import trasmapi.sumo.SumoVehicle;
 
-import java.util.Random;
+/**
+ * Created by Andre on 06/12/2016.
+ */
+public class TrafficLightAgent extends Agent {
 
-
-public class DriverAgent extends Agent {
-
-    private SumoVehicle agentVehicle;
-    public static Random rand;
     private String id;
 
-    public DriverAgent(String id){
+    public TrafficLightAgent(String id){
         super();
-
-
         this.id = id;
-
-        //this.agentVehicle = SumoCom.getVehicleById(rand.nextInt(SumoCom.vehicleTypesIDs.size()));
     }
 
     @Override
-    protected void setup(){
+    public void setup(){
         DFAgentDescription ad = new DFAgentDescription();
         ad.setName(getAID()); //agentID
         System.out.println("AID: "+ad.getName());
@@ -36,10 +28,5 @@ public class DriverAgent extends Agent {
 
         sd.setType("Driver");
         System.out.println("Tipo: "+sd.getType()+"\n\n\n");
-    }
-
-    @Override
-    protected void takeDown(){
-
     }
 }
