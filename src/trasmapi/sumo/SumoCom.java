@@ -105,9 +105,7 @@ public class SumoCom {
 		//give sumo time to startup, don't give up on first try
 		for (int i=1;i<10;i++) {
 			try {
-                System.out.println("CONNECT: " + server +" " + port);
-				socket = new Socket(server, 8820);
-                System.out.println("socket ok");
+				socket = new Socket(server, port);
 				SumoCom.out = new DataOutputStream(socket.getOutputStream());
 				SumoCom.in = new DataInputStream(socket.getInputStream());
 				connected = true;
@@ -363,7 +361,6 @@ public class SumoCom {
 	public synchronized static ResponseMessage query(RequestMessage request) throws IOException {
 
 		request.sendRequestMessage(out);
-        System.out.println("CRLLLLLLLLLLLL");
 		return new ResponseMessage(in);
 	}
 	
@@ -414,12 +411,12 @@ public class SumoCom {
 		reqMsg.addCommand(cmd);
 
 		try {
-            System.out.println("aqui 212");
+            //System.out.println("aqui 212");
 			ResponseMessage rspMsg = query(reqMsg);
-            System.out.println("aqui");
+            //System.out.println("aqui");
 			Content content = rspMsg.validate((byte)Constants.CMD_GET_VEHICLE_VARIABLE,  (byte)Constants.RESPONSE_GET_VEHICLE_VARIABLE,
 					(byte)Constants.ID_LIST,  (byte)Constants.TYPE_STRINGLIST);
-            System.out.println("aqui2");
+            //System.out.println("aqui2");
 			return content.getStringList();
 
 		} catch (IOException e) {

@@ -9,6 +9,7 @@ import trasmapi.genAPI.TraSMAPI;
 import trasmapi.genAPI.exceptions.TimeoutException;
 import trasmapi.genAPI.exceptions.UnimplementedMethod;
 import trasmapi.sumo.Sumo;
+import trasmapi.sumo.SumoTrafficLight;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,9 +45,9 @@ public class Main {
         //Create SUMO
         Sumo sumo = new Sumo("guisim");
         List<String> params = new ArrayList<String>();
-        params.add("-c=src\\T1Map\\map.sumo.cfg");
+        params.add("-c=src\\T1Map\\sumo.cfg");
         sumo.addParameters(params);
-        sumo.addConnections("localhost", 6942);
+        sumo.addConnections("localhost", 8820); //6942
 
         TraSMAPI api = new TraSMAPI();
         //Add Sumo to TraSMAPI
@@ -58,18 +59,28 @@ public class Main {
         System.out.println("coisas");
         api.connect();
         System.out.println("a chamar");
-        //manager = new AgentManager(sumo, mainContainer);
-        System.out.println("a chamar");
+
         api.start();
+
+
+
+        manager = new AgentManager(sumo, mainContainer);
+        manager.startTrafficLights();
+        //System.out.println(SumoTrafficLight.getIdList());
 
         System.out.println("chega");
         while(true) {
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             if(!api.simulationStep(0))
                 break;
+
+            manager.updateDrivers();
         }
-
-
-
 
     }
 }

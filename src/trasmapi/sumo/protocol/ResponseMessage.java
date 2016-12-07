@@ -20,15 +20,13 @@ public class ResponseMessage {
 
 		commands = new ArrayList<Command>();
 
-		System.out.println();
+
 		//System.out.println(in.readInt());
 		try {
 			length = in.readInt();
 		} catch (IOException e) {
-			System.out.println("cenas321");
 			e.printStackTrace();
 		}
-		System.out.println("RESPONSE MSG");
 		byte[] buffer = new byte[length-Integer.SIZE/8];
 		try {
 			in.readFully(buffer);
