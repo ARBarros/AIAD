@@ -16,22 +16,38 @@ public class ResponseMessage {
 		
 	}
 
-	public ResponseMessage(DataInputStream in) throws IOException {
+	public ResponseMessage(DataInputStream in)  {
 
 		commands = new ArrayList<Command>();
 
-		length = in.readInt();
-
+		System.out.println();
+		//System.out.println(in.readInt());
+		try {
+			length = in.readInt();
+		} catch (IOException e) {
+			System.out.println("cenas321");
+			e.printStackTrace();
+		}
+		System.out.println("RESPONSE MSG");
 		byte[] buffer = new byte[length-Integer.SIZE/8];
-		in.readFully(buffer);
+		try {
+			in.readFully(buffer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		Buffer buf = new Buffer(buffer);
 
 		if(length > 0){
 
+
 			while(!buf.end()){
 
-				status = new StatusResponse(buf);
+				try {
+					status = new StatusResponse(buf);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 
 				if(status.getIdentifier() == Constants.CMD_SIMSTEP2){
 

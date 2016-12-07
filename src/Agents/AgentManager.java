@@ -18,11 +18,14 @@ public class AgentManager {
     public AgentManager(Sumo sumo, ContainerController mainContainer){
 
         //inicialização dos agentes dos veiculos
-        for(/*String id : SumoCom.getAllVehiclesIds()*/ int i=0; i < 10 ; i++){
-
+        System.out.println("CARALHOOOOOO");
+        System.out.println(SumoCom.vehicles);
+        System.out.println("cenas");
+        for(String id : SumoCom.getAllVehiclesIds()){
+            System.out.println("crl");
             try {
-                mainContainer.acceptNewAgent("Driver-" + i, new DriverAgent(Integer.toString(i)));
-                System.out.println("Created Agent " + i);
+                mainContainer.acceptNewAgent("Driver-" + id, new DriverAgent(id));
+                System.out.println("Created Agent " + id);
             } catch (StaleProxyException e) {
                 e.printStackTrace();
             }

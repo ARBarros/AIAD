@@ -39,6 +39,7 @@ public class Sumo extends Simulator {
 
 	public void addConnections(String add, int portP){
 		comm.port = portP;
+		comm.server = add;
 	}
 	
 	public void start(){

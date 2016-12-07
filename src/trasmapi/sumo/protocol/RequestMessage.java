@@ -16,6 +16,7 @@ public class RequestMessage {
 	}
 
 	public void sendRequestMessage(DataOutputStream out) throws IOException {
+
 		
 		int totalLen = Integer.SIZE / 8; // the length header
 
@@ -27,6 +28,8 @@ public class RequestMessage {
 
 		for (Command cmd : commands) 
 			cmd.sendCommand(out);
-		
+
+
+
 	}
 }

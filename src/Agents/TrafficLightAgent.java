@@ -29,4 +29,9 @@ public class TrafficLightAgent extends Agent {
         sd.setType("Driver");
         System.out.println("Tipo: "+sd.getType()+"\n\n\n");
     }
+
+    @Override
+    public void takeDown(){
+
+    }
 }

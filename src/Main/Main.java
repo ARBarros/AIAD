@@ -5,8 +5,12 @@ import jade.BootProfileImpl;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
 import jade.wrapper.ContainerController;
+import trasmapi.genAPI.TraSMAPI;
+import trasmapi.genAPI.exceptions.TimeoutException;
+import trasmapi.genAPI.exceptions.UnimplementedMethod;
 import trasmapi.sumo.Sumo;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +25,7 @@ public class Main {
     private static AgentManager manager;
     private static Sumo sumo;
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws UnimplementedMethod, IOException, TimeoutException {
         if(jade_gui){
             List<String> params = new ArrayList<String>();
             params.add("-gui");
@@ -33,8 +37,42 @@ public class Main {
 
         mainContainer = rt.createMainContainer(profile);
 
-        manager = new AgentManager(sumo, mainContainer);
+        System.out.println("cenas");
+
+
+
+        //Create SUMO
+        Sumo sumo = new Sumo("guisim");
+        List<String> params = new ArrayList<String>();
+        params.add("-c=src\\T1Map\\map.sumo.cfg");
+        sumo.addParameters(params);
+        sumo.addConnections("localhost", 6942);
+
+        TraSMAPI api = new TraSMAPI();
+        //Add Sumo to TraSMAPI
+        api.addSimulator(sumo);
+
+        //Launch and Connect all the simulators added
+
+        api.launch();
+        System.out.println("coisas");
+        api.connect();
+        System.out.println("a chamar");
+        //manager = new AgentManager(sumo, mainContainer);
+        System.out.println("a chamar");
+        api.start();
+
+        System.out.println("chega");
+        while(true) {
+            if(!api.simulationStep(0))
+                break;
+        }
+
+
 
 
     }
 }
+
+
+

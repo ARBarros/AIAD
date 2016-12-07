@@ -1,1 +1,1 @@
-http://ssla.fe.up.pt:7778/acc
+http://pc:7778/acc
