@@ -1,6 +1,7 @@
 package Agents;
 
 import Statistics.LightsStatistics;
+import Statistics.SpeedStatistics;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
 import trasmapi.sumo.Sumo;
@@ -21,6 +22,7 @@ public class AgentManager {
     Sumo sumo;
     ContainerController mainContainer;
     LightsStatistics lightsStatistics;
+    SpeedStatistics speedStatistics;
 
 
     public AgentManager(Sumo sumo, ContainerController mainContainer){
@@ -29,7 +31,10 @@ public class AgentManager {
         vehiclesId = null;
         trafficLightsId = SumoTrafficLight.getIdList();
         lightsStatistics = new LightsStatistics(sumo);
+        speedStatistics = new SpeedStatistics(sumo);
+        lightsStatistics = new LightsStatistics(sumo);
 
+        new Thread(speedStatistics).start();
         new Thread(lightsStatistics).start();
     }
 

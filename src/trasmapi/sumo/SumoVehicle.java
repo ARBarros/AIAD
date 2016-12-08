@@ -887,4 +887,47 @@ public class SumoVehicle extends Vehicle {
 		}
 		return time;
 	}
+
+	public double getSpeedVehicle(){
+		double speed = -1;
+
+		Command cmd = new Command(Constants.CMD_GET_VEHICLE_VARIABLE);
+		Content cnt = new Content(Constants.VAR_SPEED,id);
+
+		cmd.setContent(cnt);
+
+		//cmd.print("Command");
+
+		RequestMessage reqMsg = new RequestMessage();
+		reqMsg.addCommand(cmd);
+		String name = "speeds.txt";
+
+
+		try {
+
+			ResponseMessage rspMsg = SumoCom.query(reqMsg);
+			Content content = rspMsg.validate( (byte)  Constants.CMD_GET_VEHICLE_VARIABLE, (byte)  Constants.RESPONSE_GET_VEHICLE_VARIABLE,
+					(byte)  Constants.VAR_SPEED, (byte)  Constants.TYPE_DOUBLE);
+
+			speed = content.getDouble();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (WrongCommand e) {
+			e.printStackTrace();
+		}
+
+
+		try {
+			FileWriter file = new FileWriter(name, true);
+
+			file.write("----"+ speed);
+			file.write("\r\n");
+			file.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return speed;
+	}
 }
