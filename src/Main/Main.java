@@ -1,6 +1,7 @@
 package Main;
 
 import Agents.AgentManager;
+import Statistics.LightsStatistics;
 import jade.BootProfileImpl;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
