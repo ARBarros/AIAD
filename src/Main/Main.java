@@ -70,16 +70,12 @@ public class Main {
 
         System.out.println("chega");
         while(true) {
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
             if(!api.simulationStep(0))
                 break;
 
             manager.updateDrivers();
+            manager.updateTrafficLights();
         }
 
     }

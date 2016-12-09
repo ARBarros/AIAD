@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8898311-5e3f-4f1b-b5d1-8bea7e459567" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AIAD1/T1Map/map.sumo.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AIAD1/T1Map/sumotest.net.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AIAD1/T1Map/sumotest.rou.alt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AIAD1/T1Map/sumotest.rou.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AIAD1/T1Map/sumotest.trips.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/T1Map/map.sumo.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/T1Map/sumotest.net.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/T1Map/sumotest.rou.alt.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/T1Map/sumotest.rou.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/T1Map/sumotest.trips.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Agents/AgentManager.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Agents/AgentManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Agents/DriverAgent.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Agents/DriverAgent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Agents/TrafficLightAgent.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Agents/TrafficLightAgent.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Main/Main.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Main/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoCom.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoCom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/protocol/ResponseMessage.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/protocol/ResponseMessage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoVehicle.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoVehicle.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/APDescription.txt" afterPath="$PROJECT_DIR$/APDescription.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MTPs-Main-Container.txt" afterPath="$PROJECT_DIR$/MTPs-Main-Container.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agents/AgentManager.java" afterPath="$PROJECT_DIR$/src/Agents/AgentManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agents/DriverAgent.java" afterPath="$PROJECT_DIR$/src/Agents/DriverAgent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agents/TrafficLightAgent.java" afterPath="$PROJECT_DIR$/src/Agents/TrafficLightAgent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main/Main.java" afterPath="$PROJECT_DIR$/src/Main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/protocol/ResponseMessage.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/protocol/ResponseMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java" />
     </list>
     <ignored path="AIAD1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,20 +41,52 @@
       <file leaf-file-name="SumoCom.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+            <state relative-caret-position="357">
+              <caret line="151" column="126" selection-start-line="151" selection-start-column="126" selection-end-line="151" selection-end-column="126" />
               <folding>
                 <element signature="e#1312#1325#0" expanded="true" />
+                <element signature="e#1776#1784#0" expanded="true" />
+                <element signature="e#19796#19813#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="227" column="53" selection-start-line="227" selection-start-column="28" selection-end-line="227" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Content.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/Content.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/Command.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="36" />
+            <state relative-caret-position="286">
+              <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#902#910#0" expanded="true" />
@@ -71,16 +96,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DriverAgent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Agents/DriverAgent.java">
+      <file leaf-file-name="SumoEdge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1322#1323#0" expanded="true" />
-                <element signature="e#1357#1358#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,10 +109,11 @@
       <file leaf-file-name="SumoVehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="12920">
+              <caret line="770" column="0" selection-start-line="770" selection-start-column="0" selection-end-line="770" selection-end-column="0" />
               <folding>
-                <element signature="e#536#545#0" expanded="true" />
+                <element signature="e#736#737#0" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,28 +122,8 @@
       <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sumo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/Sumo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/ResponseMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="6902">
+              <caret line="416" column="18" selection-start-line="416" selection-start-column="18" selection-end-line="416" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -130,31 +132,29 @@
       <file leaf-file-name="AgentManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Agents/AgentManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state relative-caret-position="306">
+              <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#702#721#0" expanded="true" />
+                <element signature="e#780#793#0" expanded="true" />
+                <element signature="e#858#876#0" expanded="true" />
+                <element signature="e#985#998#0" expanded="true" />
+                <element signature="e#1055#1063#0" expanded="true" />
+                <element signature="e#4767#4784#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TraSMAPI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/TraSMAPI.java">
+      <file leaf-file-name="TrafficLightAgent.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Agents/TrafficLightAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Simulator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/Simulator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="439">
+              <caret line="153" column="9" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
+              <folding>
+                <element signature="e#4264#4295#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -187,14 +187,16 @@
         <option value="$PROJECT_DIR$/src/trasmapi/sumo/SumoConfig.java" />
         <option value="$PROJECT_DIR$/src/SumoTest.java" />
         <option value="$PROJECT_DIR$/src/Agents/ManagerAgent.java" />
-        <option value="$PROJECT_DIR$/src/Agents/TrafficLightAgent.java" />
         <option value="$PROJECT_DIR$/src/trasmapi/sumo/Sumo.java" />
         <option value="$PROJECT_DIR$/src/trasmapi/sumo/protocol/RequestMessage.java" />
-        <option value="$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java" />
         <option value="$PROJECT_DIR$/src/trasmapi/sumo/protocol/ResponseMessage.java" />
-        <option value="$PROJECT_DIR$/src/Agents/DriverAgent.java" />
-        <option value="$PROJECT_DIR$/src/Agents/AgentManager.java" />
         <option value="$PROJECT_DIR$/src/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java" />
+        <option value="$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java" />
+        <option value="$PROJECT_DIR$/src/Agents/DriverAgent.java" />
+        <option value="$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java" />
+        <option value="$PROJECT_DIR$/src/Agents/AgentManager.java" />
+        <option value="$PROJECT_DIR$/src/Agents/TrafficLightAgent.java" />
       </list>
     </option>
   </component>
@@ -280,24 +282,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AIAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AIAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="trasmapi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -814,12 +798,12 @@
       <workItem from="1480806444642" duration="15074000" />
       <workItem from="1480892007137" duration="2597000" />
       <workItem from="1480960958935" duration="24190000" />
-      <workItem from="1481079735578" duration="5867000" />
+      <workItem from="1481079735578" duration="58529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47728000" />
+    <option name="totallyTimeSpent" value="100390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -833,7 +817,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34595302" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -918,109 +902,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#902#910#0" expanded="true" />
-            <element signature="e#1322#1330#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/Sumo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/ResponseMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agents/AgentManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/TraSMAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/Simulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/src.zip!/java/io/BufferedInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4131">
-          <caret line="268" column="0" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18073#0" expanded="false" />
-            <element signature="e#5951#5952#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-            <element signature="e#17241#17242#0" expanded="false" />
-            <element signature="e#17268#17269#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/src.zip!/java/util/Currency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10149">
-          <caret line="653" column="35" selection-start-line="653" selection-start-column="35" selection-end-line="653" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#32281#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#13188#13189#0" expanded="false" />
-            <element signature="e#13258#13259#0" expanded="false" />
-            <element signature="e#20969#20970#0" expanded="false" />
-            <element signature="e#21004#21005#0" expanded="false" />
-            <element signature="e#21653#21654#0" expanded="false" />
-            <element signature="e#21729#21730#0" expanded="false" />
-            <element signature="e#23198#23199#0" expanded="false" />
-            <element signature="e#23242#23243#0" expanded="false" />
-            <element signature="e#23435#23436#0" expanded="false" />
-            <element signature="e#23469#23470#0" expanded="false" />
-            <element signature="e#24088#24089#0" expanded="false" />
-            <element signature="e#24169#24170#0" expanded="false" />
-            <element signature="e#25353#25354#0" expanded="false" />
-            <element signature="e#25388#25389#0" expanded="false" />
-            <element signature="e#25520#25521#0" expanded="false" />
-            <element signature="e#25568#25569#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/RequestMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Agents/DriverAgent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1170,13 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agents/TrafficLightAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/RequestMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1250,22 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoTrafficLight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/Sumo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/ResponseMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -1274,64 +1132,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java">
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoLane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="-85">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/Sumo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoTrafficLightProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agents/DriverAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="e#536#545#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java">
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        <state relative-caret-position="68">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/TrafficLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3587">
+          <caret line="218" column="75" selection-start-line="218" selection-start-column="75" selection-end-line="218" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoTrafficLight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="234" column="52" selection-start-line="234" selection-start-column="52" selection-end-line="234" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/Content.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="227" column="53" selection-start-line="227" selection-start-column="28" selection-end-line="227" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/protocol/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
           <folding>
-            <element signature="e#1312#1325#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#902#910#0" expanded="true" />
+            <element signature="e#1322#1330#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trasmapi/genAPI/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="6902">
+          <caret line="416" column="18" selection-start-line="416" selection-start-column="18" selection-end-line="416" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12920">
+          <caret line="770" column="0" selection-start-line="770" selection-start-column="0" selection-end-line="770" selection-end-column="0" />
+          <folding>
+            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="151" column="126" selection-start-line="151" selection-start-column="126" selection-end-line="151" selection-end-column="126" />
+          <folding>
+            <element signature="e#1312#1325#0" expanded="true" />
+            <element signature="e#1776#1784#0" expanded="true" />
+            <element signature="e#19796#19813#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Agents/AgentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        <state relative-caret-position="306">
+          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#702#721#0" expanded="true" />
+            <element signature="e#780#793#0" expanded="true" />
+            <element signature="e#858#876#0" expanded="true" />
+            <element signature="e#985#998#0" expanded="true" />
+            <element signature="e#1055#1063#0" expanded="true" />
+            <element signature="e#4767#4784#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Agents/DriverAgent.java">
+    <entry file="file://$PROJECT_DIR$/src/Agents/TrafficLightAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="439">
+          <caret line="153" column="9" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#902#910#0" expanded="true" />
-            <element signature="e#1322#1330#0" expanded="true" />
+            <element signature="e#4264#4295#0" expanded="true" />
           </folding>
         </state>
       </provider>
