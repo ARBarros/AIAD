@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8898311-5e3f-4f1b-b5d1-8bea7e459567" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Agents/AgentManager.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Agents/AgentManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Agents/DriverAgent.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Agents/DriverAgent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Agents/TrafficLightAgent.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Agents/TrafficLightAgent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/Main/Main.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/Main/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoCom.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoCom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoVehicle.class" afterPath="$PROJECT_DIR$/out/production/AIAD1/trasmapi/sumo/SumoVehicle.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agents/AgentManager.java" afterPath="$PROJECT_DIR$/src/Agents/AgentManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agents/DriverAgent.java" afterPath="$PROJECT_DIR$/src/Agents/DriverAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agents/TrafficLightAgent.java" afterPath="$PROJECT_DIR$/src/Agents/TrafficLightAgent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main/Main.java" afterPath="$PROJECT_DIR$/src/Main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/SumoCom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/SumoEdge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java" afterPath="$PROJECT_DIR$/src/trasmapi/sumo/SumoVehicle.java" />
     </list>
     <ignored path="AIAD1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -798,12 +785,12 @@
       <workItem from="1480806444642" duration="15074000" />
       <workItem from="1480892007137" duration="2597000" />
       <workItem from="1480960958935" duration="24190000" />
-      <workItem from="1481079735578" duration="58529000" />
+      <workItem from="1481079735578" duration="58754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100390000" />
+    <option name="totallyTimeSpent" value="100615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
