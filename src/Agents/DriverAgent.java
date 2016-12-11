@@ -30,6 +30,7 @@ public class DriverAgent extends Agent {
 
     @Override
     protected void setup(){
+        System.out.println("CARALHO");
         DFAgentDescription ad = new DFAgentDescription();
         ad.setName(getAID()); //agentID
         System.out.println("AID: "+ad.getName());
@@ -60,7 +61,7 @@ public class DriverAgent extends Agent {
     }
 
     public String getLaneId() throws UnimplementedMethod {
-        System.out.println(agentVehicle);
+        //System.out.println(agentVehicle);
         return agentVehicle.getLaneId();
     }
 

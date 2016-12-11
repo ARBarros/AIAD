@@ -1,5 +1,10 @@
 package Agents;
 
+import jade.core.Agent;
+import jade.domain.DFService;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.domain.FIPAException;
 import jade.wrapper.ContainerController;
 import jade.wrapper.StaleProxyException;
 import trasmapi.genAPI.TrafficLight;
@@ -12,6 +17,8 @@ import trasmapi.sumo.SumoCom;
 import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.Semaphore;
 
 import static trasmapi.sumo.SumoCom.arrivedVehicles;
 import static trasmapi.sumo.SumoCom.vehicles;
@@ -19,36 +26,81 @@ import static trasmapi.sumo.SumoCom.vehicles;
 /**
  * Created by Andre on 06/12/2016.
  */
-public class AgentManager {
-    ArrayList<String> vehiclesId;
-    ArrayList<String> trafficLightsId;
-    ArrayList<TrafficLightAgent> tlAgents = new ArrayList<TrafficLightAgent>();
-    ArrayList<DriverAgent> driverAgents = new ArrayList<DriverAgent>();
-    ArrayList<SumoTrafficLight> trafficLights = new ArrayList<SumoTrafficLight>();
-    Sumo sumo;
-    ContainerController mainContainer;
-    ArrayList<SumoVehicle> vehicles = new ArrayList<SumoVehicle>();
-    ArrayList<String> arrivedVehicles = new ArrayList<String>();
+public class AgentManager extends Agent {
+    private ArrayList<String> vehiclesId;
+    private ArrayList<String> trafficLightsId;
+    private ArrayList<TrafficLightAgent> tlAgents = new ArrayList<TrafficLightAgent>();
+    private ArrayList<DriverAgent> driverAgents = new ArrayList<DriverAgent>();
+    private ArrayList<SumoTrafficLight> trafficLights = new ArrayList<SumoTrafficLight>();
+    private Sumo sumo;
+    private ContainerController mainContainer;
+    private ArrayList<SumoVehicle> vehicles = new ArrayList<SumoVehicle>();
+    public ArrayList<String> arrivedVehicles = new ArrayList<String>();
+    private String type;
+    private Semaphore semaphore;
 
 
-    public AgentManager(Sumo sumo, ContainerController mainContainer){
+    public AgentManager(Sumo sumo, ContainerController mainContainer, String type){
 
         this.mainContainer = mainContainer;
         vehiclesId = null;
         trafficLightsId = SumoTrafficLight.getIdList();
+        System.out.println("TF»RAFFIC LIGHTS " + trafficLightsId);
         SumoCom.createAllRoutes();
+        this.type = type;
+        semaphore = new Semaphore(1);
 
+    }
+
+    @Override
+    public void setup(){
+        DFAgentDescription ad = new DFAgentDescription();
+        ad.setName(getAID()); //agentID
+        System.out.println("AID: "+ad.getName());
+
+        ServiceDescription sd = new ServiceDescription();
+        sd.setName(getName()); //nome do agente
+        System.out.println("Nome: "+sd.getName());
+
+        sd.setType("Driver");
+        System.out.println("Tipo: "+sd.getType()+"\n\n\n");
+
+        ad.addServices(sd);
+
+        try {
+            DFService.register(this, ad);
+        } catch (FIPAException e) {
+            e.printStackTrace();
+        }
+
+        super.setup();
+    }
+
+    @Override
+    protected void takeDown() {
+        try {
+            DFService.deregister(this);
+        } catch (FIPAException e) {
+            e.printStackTrace();
+        }
+        super.takeDown();
+    }
+
+    public void killAgents(){
+        for(TrafficLightAgent agent: tlAgents){
+            agent.stop(true);
+        }
     }
 
     public void updateDrivers() throws UnimplementedMethod {
         if(vehiclesId == null) {
             vehiclesId = SumoCom.getAllVehiclesIds();
             for (String id : vehiclesId) {
-                System.out.println("crl");
+                //System.out.println("crl");
                 try {
                     DriverAgent toAdd = new DriverAgent(id);
 
-                    mainContainer.acceptNewAgent("Driver-" + id, toAdd);
+                    mainContainer.acceptNewAgent("Driver-" + id, toAdd).start();
                     driverAgents.add(toAdd);
 
                     vehicles.add(new SumoVehicle(id));
@@ -77,22 +129,38 @@ public class AgentManager {
                         vehiclesId.remove(v.id);
                     }
                 }
+
             }
         }
 
         for(String v : SumoCom.getArrivedVehicles()){
+            //System.out.println("A TRAP DO CONTADOR");
             arrivedVehicles.add(v);
+            //System.out.println(arrivedVehicles);
+            //System.out.println(SumoCom.getArrivedVehicles());
         }
+        //System.out.println("A GRANDE PUTA QUE TE PARIU " + SumoCom.getArrivedVehicles());
+        //System.out.println(arrivedVehicles);
+
     }
 
-    public void startTrafficLights(){
+    public void startTrafficLights(String type){
+
+        //SumoCom.createAllRoutes();
 
         for(String id : trafficLightsId){
             try {
+
                 SumoTrafficLight temp = new SumoTrafficLight(id);
                 trafficLights.add(temp);
-                TrafficLightAgent tempAgent = new TrafficLightAgent(id, temp);
-                mainContainer.acceptNewAgent("TF- " + id, tempAgent);
+                TrafficLightAgent tempAgent;
+                if(type.equals("learning")){
+                    tempAgent = new InteligentTrafficLight(id, temp, this, type);
+                }else{
+                    tempAgent = new TrafficLightAgent(id, temp, this, type);
+                }
+
+                mainContainer.acceptNewAgent("TF- " + id, tempAgent).start();
                 tlAgents.add(tempAgent);
 
                 System.out.println("Novo Semaforo " + id);
@@ -103,7 +171,13 @@ public class AgentManager {
         System.out.println(trafficLights);
     }
 
-    public void updateTrafficLights() throws UnimplementedMethod {
+    public void updateTrafficLightsBasic(){
+        for(TrafficLightAgent tl: tlAgents){
+            tl.update(false);
+        }
+    }
+
+    public void updateTrafficLightsInt() throws UnimplementedMethod {
 
         HashMap<String, Integer> stoppedVehicles = getNumVehiclesStoppedPerEdgeID();
         //System.out.println(stoppedVehicles);
@@ -120,7 +194,7 @@ public class AgentManager {
                     try{
                         vehicleCount = stoppedVehicles.get(lane);
                         //System.out.println(vehicleCount);
-                        if(vehicleCount >= 3){
+                        if(vehicleCount >= 5){
                             tl.update(true);
                             break;
                         }
@@ -140,16 +214,28 @@ public class AgentManager {
 
     }
 
-    public  HashMap<String, Integer> getNumVehiclesStoppedPerEdgeID() throws UnimplementedMethod {
+    public HashMap<String, Integer> getNumVehiclesStoppedPerEdgeID() throws UnimplementedMethod {
 
+        try {
+            semaphore.acquire();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         HashMap<String, Integer> vehPerEdge = new HashMap<String, Integer>();
+
+
 
         //System.out.println("veiculos " + vehicles);
 
-        for(SumoVehicle v: vehicles){
+        for(Iterator<SumoVehicle> it = vehicles.iterator(); it.hasNext();){
+
+            SumoVehicle v = it.next();
+
+
             //System.out.println("ARRIVED " + v.edgeId);
             //System.out.println("ARRIVED VEHICLES " + arrivedVehicles);
             //System.out.println(v.id);
+            System.out.println("AQUI PUTA " + arrivedVehicles + " " + v.id);
             if(!arrivedVehicles.contains(v.id)){
                 String edge = v.getEdgeId();
                 System.out.println("EDGE " + edge);
@@ -163,7 +249,10 @@ public class AgentManager {
 
         }
 
+        semaphore.release();
+
         return vehPerEdge;
+
     }
 
     public int countStoppedCars(TrafficLightAgent tl) throws UnimplementedMethod {
