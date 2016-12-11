@@ -4,6 +4,7 @@ import jade.core.Agent;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import trasmapi.genAPI.Route;
+import trasmapi.genAPI.exceptions.UnimplementedMethod;
 import trasmapi.sumo.SumoCom;
 import trasmapi.sumo.SumoVehicle;
 
@@ -29,6 +30,7 @@ public class DriverAgent extends Agent {
 
     @Override
     protected void setup(){
+        System.out.println("CARALHO");
         DFAgentDescription ad = new DFAgentDescription();
         ad.setName(getAID()); //agentID
         System.out.println("AID: "+ad.getName());
@@ -53,6 +55,17 @@ public class DriverAgent extends Agent {
     public SumoVehicle getVehicle(){
         return agentVehicle;
     }
+
+    public Route getRoute() throws UnimplementedMethod {
+        return agentVehicle.getRoute();
+    }
+
+    public String getLaneId() throws UnimplementedMethod {
+        //System.out.println(agentVehicle);
+        return agentVehicle.getLaneId();
+    }
+
+
 
     @Override
     protected void takeDown(){

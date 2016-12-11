@@ -49,7 +49,7 @@ public class SumoCom {
 
 	private static ArrayList<SumoEdge> edges = new ArrayList<SumoEdge>();
 
-	private static ArrayList<String> loadedVehicles = new ArrayList<String>();
+    private static ArrayList<String> loadedVehicles = new ArrayList<String>();
 	private static ArrayList<String> departedVehicles = new ArrayList<String>();
 	public static ArrayList<String> arrivedVehicles = new ArrayList<String>();
 
@@ -132,6 +132,36 @@ public class SumoCom {
 			e.printStackTrace();
 		}	
 	}
+
+    public static List<String> getArrivedVehicles(){
+        Command cmd = new Command(Constants.CMD_GET_SIM_VARIABLE);
+
+        Content cnt = new Content(Constants.VAR_ARRIVED_VEHICLES_IDS, "dummy");
+
+        cmd.setContent(cnt);
+
+        //cmd.print("Command getAllVeh");
+
+        RequestMessage reqMsg = new RequestMessage();
+        reqMsg.addCommand(cmd);
+
+        try {
+            //System.out.println("aqui 212");
+            ResponseMessage rspMsg = query(reqMsg);
+            //System.out.println("aqui");
+            Content content = rspMsg.validate((byte)Constants.CMD_GET_SIM_VARIABLE,  (byte)Constants.RESPONSE_GET_SIM_VARIABLE,
+                    (byte)Constants.VAR_ARRIVED_VEHICLES_IDS,  (byte)Constants.TYPE_STRINGLIST);
+            //System.out.println("aqui2");
+            return content.getStringList();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (WrongCommand e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 
 	public void close() throws IOException {
 
@@ -324,7 +354,7 @@ public class SumoCom {
 		}
 	}
 
-	private void loadArrivedVehicles(ArrayList<String> arrivedVehiclesIDs) {
+	private static void loadArrivedVehicles(ArrayList<String> arrivedVehiclesIDs) {
 
 		//System.out.println("Arrived : " + arrivedVehiclesIDs);
 
@@ -396,6 +426,8 @@ public class SumoCom {
 
 		return null;
 	}
+
+    //public static ArrayList<String> get
 	
 	public static ArrayList<String> getAllVehiclesIds() {
 
@@ -739,6 +771,10 @@ public class SumoCom {
 		}
 		return vehPerRoute;
 	}
+
+
+
+
 
 	public static void addAllVehiclesToSimulation() {
 

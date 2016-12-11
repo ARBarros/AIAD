@@ -301,6 +301,35 @@ public class SumoVehicle extends Vehicle {
 		}
 	}
 
+	public String getLaneId(){
+		Command cmd = new Command(Constants.CMD_GET_VEHICLE_VARIABLE);
+		Content cnt = new Content(Constants.VAR_LANE_ID,id);
+
+		cmd.setContent(cnt);
+
+		//cmd.print("Command");
+
+		RequestMessage reqMsg = new RequestMessage();
+		reqMsg.addCommand(cmd);
+
+
+		try {
+
+			ResponseMessage rspMsg = SumoCom.query(reqMsg);
+			Content content = rspMsg.validate( (byte)  Constants.CMD_GET_VEHICLE_VARIABLE, (byte)  Constants.RESPONSE_GET_VEHICLE_VARIABLE,
+					(byte)  Constants.VAR_LANE_ID, (byte)  Constants.TYPE_STRING);
+
+			laneId = content.getString();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (WrongCommand e) {
+			e.printStackTrace();
+		}
+
+		return laneId;
+	}
+
 	public void slowDown(double newSpeed, int newSpeedTime){
 
 		Command cmd = new Command(Constants.CMD_SET_VEHICLE_VARIABLE);
