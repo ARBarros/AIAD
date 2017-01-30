@@ -1,1 +1,2 @@
-# AIAD
+# Simulation of Traffic in a City
+This project tries to solve city's traffic lights problems, such as waiting time and large amount of cars stopped in a traffic light, by applying algorithms and communication. It uses JADE, as both the cars and traffic lights are initiliazed as agents, SUMO, for the simulation purposes and, finally, [TraSMAPI](https://github.com/STEMS-group/TraSMAPI) as a bridge between JADE and SUMO. For more information, check the report.
